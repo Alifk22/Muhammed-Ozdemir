@@ -54,12 +54,11 @@
     
     .card-container {
       perspective: 1500px;
-      width: 380px;
-      height: 580px;
+      width: 510px;
+      height: 750px;
       position: relative;
       z-index: 1;
       transform-style: preserve-3d;
-      margin: 20px auto;
     }
     
     .business-card {
@@ -435,80 +434,129 @@
     }
     
     /* Media Queries for Responsiveness */
+    /* Mobile Responsive Design */
     @media (max-width: 480px) {
       .card-container {
         width: 320px;
-        height: 480px;
+        height: 500px;
+        margin: 0 auto;
       }
       
       .card-front, .card-back {
-        padding: 15px;
+        padding: 20px 15px;
+        border-radius: 18px;
+      }
+      
+      .profile-photo {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 12px;
       }
       
       .name {
         font-size: 20px;
+        margin-bottom: 4px;
       }
       
       .title {
         font-size: 14px;
+        margin-bottom: 2px;
       }
       
       .company {
         font-size: 12px;
-        margin-bottom: 12px;
-      }
-      
-      .contact-text {
-        font-size: 9px;
-      }
-      
-      .contact-row .icon {
-        width: 16px;
-        height: 16px;
-        margin-right: 5px;
       }
       
       .contact-info-container {
         padding: 10px 8px;
         margin-top: 10px;
-        margin-bottom: 15px;
-      }
-      
-      .profile-photo {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 10px;
-      }
-      
-      .contact-row {
-        margin-bottom: 10px;
-      }
-      
-      #qrcode {
-        width: 180px;
-        height: 180px;
-      }
-      
-      .qr-button, .back-button {
-        padding: 10px 20px;
-        font-size: 14px;
-      }
-    }
-    
-    @media (max-width: 320px) {
-      .card-container {
-        width: 280px;
-        height: 420px;
+        flex-direction: column;
       }
       
       .contact-row-left, .contact-row-right {
         width: 100%;
         padding: 0;
-        margin: 0 0 5px 0;
       }
       
-      .contact-info-container {
-        padding: 8px 6px;
+      .contact-row {
+        margin-bottom: 12px;
+      }
+      
+      .contact-row .icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+      }
+      
+      .contact-text {
+        font-size: 11px;
+        white-space: normal;
+        word-break: break-word;
+      }
+      
+      .qr-button, .back-button {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      
+      #qrcode img {
+        width: 200px;
+        height: 200px;
+      }
+      
+      /* Reduce size of circuit SVG */
+      .circuit svg {
+        transform: scale(0.8);
+      }
+      
+      /* Hide some decorative elements to reduce clutter */
+      .code-lines, .digital-dots {
+        display: none;
+      }
+    }
+    
+    /* Small Phone Optimization */
+    @media (max-width: 360px) {
+      .card-container {
+        width: 280px;
+        height: 450px;
+      }
+      
+      .card-front, .card-back {
+        padding: 15px 12px;
+      }
+      
+      .profile-photo {
+        width: 80px;
+        height: 80px;
+      }
+      
+      .name {
+        font-size: 18px;
+      }
+      
+      .title {
+        font-size: 12px;
+      }
+      
+      .company {
+        font-size: 11px;
+      }
+      
+      .contact-row .icon {
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+      }
+      
+      .contact-text {
+        font-size: 10px;
+      }
+      
+      #qrcode img {
+        width: 180px;
+        height: 180px;
       }
     }
   </style>
@@ -690,7 +738,7 @@
         
         <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 15px; position: relative; z-index: 2;">Mustafa Özdemir</h2>
         <p class="qr-text">Bilgilerimi görmek için tarayın</p>
-        <div id="qrcode" style="margin: 10px auto 25px; padding: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); width: 220px; height: 220px; display: flex; justify-content: center; align-items: center;"><img src="./images/qrcode.png" alt="QR Code" style="max-width: 100%; max-height: 100%; width: auto; height: auto;"></div>
+        <div id="qrcode" style="margin: 10px auto 25px; padding: 15px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);"><img src="./images/qrcode.png" alt="QR Code" style="width: 280px; height: 280px;"></div>
         <button class="back-button" id="flipBack">Arkasını çevir</button>
       </div>
     </div>
