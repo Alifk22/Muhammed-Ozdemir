@@ -296,16 +296,43 @@
       box-shadow: 0 6px 15px rgba(79, 116, 227, 0.4);
     }
     
-    #qrcode {
-      margin: 15px auto;
-      padding: 8px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
+    .qr-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
       position: relative;
       z-index: 2;
-      width: 180px;
-      height: 180px;
+    }
+    
+    .qr-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.1);
+      position: relative;
+      margin-bottom: 15px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      padding: 10px;
+    }
+    
+    .qr-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    
+    .qr-photo::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(79, 116, 227, 0.2) 0%, rgba(15, 15, 30, 0) 100%);
+      pointer-events: none;
     }
     
     .back-button {
@@ -670,8 +697,12 @@
         </div>
         
         <h2 style="font-size: 22px; font-weight: bold; margin-bottom: 8px; position: relative; z-index: 2;">Mustafa Özdemir</h2>
-        <p class="qr-text" style="font-size: 13px; margin-bottom: 5px; color: rgba(255,255,255,0.7);">Bilgilerimi görmek için tarayın</p>
-        <div id="qrcode" style="margin: 10px auto 15px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);"><img src="./images/qrcode.png" alt="QR Code" style="width: 180px; height: 180px; display: block;"></div>
+        <p class="qr-text" style="font-size: 13px; margin-bottom: 15px; color: rgba(255,255,255,0.7);">Bilgilerimi görmek için tarayın</p>
+        <div class="qr-container">
+          <div class="qr-photo">
+            <img src="./images/qrcode.png" alt="QR Code">
+          </div>
+        </div>
         <button class="back-button" id="flipBack">Arkasını çevir</button>
       </div>
     </div>
