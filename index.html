@@ -54,11 +54,12 @@
     
     .card-container {
       perspective: 1500px;
-      width: 510px;
-      height: 750px;
+      width: 380px;
+      height: 580px;
       position: relative;
       z-index: 1;
       transform-style: preserve-3d;
+      margin: 20px auto;
     }
     
     .business-card {
@@ -222,7 +223,6 @@
       position: relative;
       z-index: 2;
       width: 100%;
-      box-sizing: border-box;
     }
     
     .contact-row-left {
@@ -242,7 +242,6 @@
       margin-bottom: 18px;
       width: 100%;
       overflow: hidden;
-      flex-wrap: wrap;
     }
     
     .contact-row .icon {
@@ -256,18 +255,13 @@
     .contact-text {
       font-size: 16px;
       color: #e2e2e2;
+      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      word-break: break-word;
       max-width: 100%;
-    }
-    
-    @media (min-width: 481px) {
-      .contact-text {
-        white-space: nowrap;
-      }
+      text-decoration: none;
+      display: inline-block;
+      transition: color 0.2s ease;
     }
     
     .contact-text:hover {
@@ -441,114 +435,14 @@
     }
     
     /* Media Queries for Responsiveness */
-    /* Large mobile devices and small tablets */
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-      
-      .card-container {
-        width: 90%;
-        max-width: 510px;
-        height: auto;
-        aspect-ratio: 2/3;
-      }
-      
-      .profile-photo {
-        width: 100px;
-        height: 100px;
-      }
-      
-      .contact-row-left, .contact-row-right {
-        width: 100%;
-        padding: 0;
-        margin-bottom: 10px;
-      }
-      
-      .contact-info-container {
-        flex-direction: column;
-        padding: 15px;
-      }
-      
-      .qr-button {
-        padding: 12px 24px;
-        font-size: 16px;
-      }
-      
-      #qrcode {
-        width: 180px;
-        height: 180px;
-      }
-    }
-    
-    /* Small mobile devices */
     @media (max-width: 480px) {
       .card-container {
-        width: 95%;
-        max-width: 350px;
+        width: 320px;
+        height: 480px;
       }
       
       .card-front, .card-back {
-        padding: 20px;
-      }
-      
-      .name {
-        font-size: 22px;
-      }
-      
-      .title {
-        font-size: 16px;
-      }
-      
-      .company {
-        font-size: 14px;
-      }
-      
-      .contact-text {
-        font-size: 11px;
-      }
-      
-      .contact-row .icon {
-        width: 18px;
-        height: 18px;
-        margin-right: 6px;
-      }
-      
-      .contact-info-container {
-        padding: 12px 10px;
-      }
-      
-      .profile-photo {
-        width: 80px;
-        height: 80px;
-      }
-      
-      .circuit svg {
-        opacity: 0.5;
-        transform: scale(0.8);
-      }
-      
-      .tech-particle {
-        opacity: 0.3;
-      }
-      
-      #qrcode {
-        width: 160px;
-        height: 160px;
-      }
-    }
-    
-    /* Extra small mobile devices */
-    @media (max-width: 360px) {
-      .card-container {
-        width: 100%;
-        max-width: 300px;
-      }
-      
-      .profile-photo {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 10px;
+        padding: 15px;
       }
       
       .name {
@@ -561,14 +455,11 @@
       
       .company {
         font-size: 12px;
+        margin-bottom: 12px;
       }
       
       .contact-text {
-        font-size: 10px;
-      }
-      
-      .contact-row {
-        margin-bottom: 10px;
+        font-size: 9px;
       }
       
       .contact-row .icon {
@@ -577,15 +468,47 @@
         margin-right: 5px;
       }
       
-      #qrcode {
-        width: 140px;
-        height: 140px;
-        padding: 8px;
+      .contact-info-container {
+        padding: 10px 8px;
+        margin-top: 10px;
+        margin-bottom: 15px;
       }
       
-      .back-button, .qr-button {
+      .profile-photo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+      }
+      
+      .contact-row {
+        margin-bottom: 10px;
+      }
+      
+      #qrcode {
+        width: 180px;
+        height: 180px;
+      }
+      
+      .qr-button, .back-button {
         padding: 10px 20px;
         font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 320px) {
+      .card-container {
+        width: 280px;
+        height: 420px;
+      }
+      
+      .contact-row-left, .contact-row-right {
+        width: 100%;
+        padding: 0;
+        margin: 0 0 5px 0;
+      }
+      
+      .contact-info-container {
+        padding: 8px 6px;
       }
     }
   </style>
@@ -655,7 +578,9 @@
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                 </svg>
               </div>
-              <a href="mailto:info.muhammedozdemir@gmail.com" class="contact-text" title="info.muhammedozdemir@gmail.com">info.muhammedozdemir@gmail.com</a>
+              <a href="info.muhammedozdemir@gmail.com" class="contact-text" title="info.muhammedozdemir@gmail.com
+              ">info.muhammedozdemir@gmail.com
+            </a>
             </div>
             
             <div class="contact-row">
@@ -666,7 +591,7 @@
                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                 </svg>
               </div>
-              <a href="https://www.öz.com" target="_blank" class="contact-text" title="Websiteyi ziyaret et">www.öz.com</a>
+              <a href="www.öz.com" target="_blank" class="contact-text" title="Websiteyi ziyaret et">www.öz.com</a>
             </div>
             
             <div class="contact-row">
